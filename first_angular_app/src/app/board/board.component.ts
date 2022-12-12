@@ -30,6 +30,7 @@ export class BoardComponent {
     if (!this.squares[idx]) {
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
+      this.calculateWinner();
     }
   }
 
@@ -51,7 +52,7 @@ export class BoardComponent {
         this.squares[a] === this.squares[b] &&
         this.squares[a] === this.squares[c]
       ) {
-        return this.squares[a];
+        return this.winner = 'X';
       }
     }
     return null;
