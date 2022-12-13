@@ -52,7 +52,7 @@ export class BoardComponent {
         this.squares[a] === this.squares[b] &&
         this.squares[a] === this.squares[c]
       ) {
-        return this.winner = 'X';
+        return this.winner = (this.player == 'X') ? 'O' : 'X';
       }
     }
     return null;
